@@ -1,38 +1,26 @@
-# testSoaint
-Prueba de la empresa SOAINT
+# Pedidos soaint web
+Prueba de la empresa SOAINT para entrar al proyecto CUC DE SUNAT
 
-### TEST DE LA APLICACIÓN
+### PRUEBA DE LA APLICACIÓN
 
 Solo ejecutar la aplicación Run -> SpringBoot App y probar por SOAPUI. 
 En la capa "controllers" se tiene mapeado todas las rutas.
-La ruta principal es /api/
-desde allí se puede consultar y hacer las diferentes pruebas para /clientes, /ventas, /productos y /productos/{id}
+La ruta principal es /api/v1.0 y hacer las diferentes pruebas 
+para /clientes, /ventas, /productos y /productos/{id} desde el proyecto soapui:
+REST-Project-Pedidos-soapui-project.xml.
 
 
 ### PREGUNTA 4. Con sus propias palabras indique de qué forma podría mejorar la seguridad y optimizar el carrito de compras.
+- Configurar un ambiente cloud para la app web y otra para la base de datos, que solo 
+la app web tenga acceso y a la parte exterior no.
 - Agregar seguridad Outh2 (el mas actual) antes de logearse en la aplicación de carrito de compras.
 - Escanear las vulnerabilidades de la aplicación con las diferentes herramientas que existen (Skipfish, Zed Attack Proxy) tomando en cuenta las buenas practicas de OWASP
+- Realizar pruebas de hacking growth.
 
 
 #### BD - Data de prueba
-create datatable db_test;
+Se encuentra en el archivo data_pedidos.sql que se encuentra en el resource.
+ 
 
-INSERT INTO clientes (apellido, dni, email, nombre, telefono) VALUES('Zapata', 47117811, 'alfredo@gmail.com', 'Alfredo', '986932867');
-INSERT INTO clientes (apellido, dni, email, nombre, telefono) VALUES('Drago', 47127912, 'adrago@gmail.com', 'Alonso', '986932867');
-INSERT INTO clientes (apellido, dni, email, nombre, telefono) VALUES('Romero', 52125913, 'cromero@gmail.com', 'Carlos', '916732860');
-INSERT INTO clientes (apellido, dni, email, nombre, telefono) VALUES('Vidaurre', 32145917, 'rvidaurre@gmail.com', 'Robin', '996732862');
-INSERT INTO clientes (apellido, dni, email, nombre, telefono) VALUES('Salcedo', 53725915, 'jpsalcedo@gmail.com', 'JP', '954732823');
-
-INSERT INTO productos (nombre, precio) VALUES('Gaseosa', 10);
-INSERT INTO productos (nombre, precio) VALUES('Chocolate', 5);
-
-INSERT INTO ventas (fecha, id_cliente) VALUES(2018-05-02, 1);
-INSERT INTO ventas (fecha, id_cliente) VALUES(2018-07-18, 2);
-
-
-### TEST JUNIT
-
-
-**Error_Add_Cliente**
-![clienteError](https://user-images.githubusercontent.com/43482668/104074706-c84cd480-51de-11eb-872e-123469746b33.png)
-
+### Pruebas soapui en el archivo configuraddo para levantarlo en la herramienta
+soapui: REST-Project-Pedidos-soapui-project.xml, existen casos de exito y error.
